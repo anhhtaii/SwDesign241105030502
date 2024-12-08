@@ -32,9 +32,9 @@
 + Lớp Payroll gọi getTimecardsByEmployee từ lớp Timecard để tính toán tổng lương.
 + Lớp Payroll sử dụng thông tin từ lớp Employee để tạo phiếu lương và báo cáo chi tiết.
 
-1. Lớp Employee - Biểu đồ Trạng thái
-Lớp Employee có thể có nhiều trạng thái trong quá trình làm việc của nhân viên, và mỗi trạng thái này phản ánh sự thay đổi trong tình trạng công việc của họ.
-## Các trạng thái:
+## 1. Lớp Employee - Biểu đồ Trạng thái
+**Lớp Employee có thể có nhiều trạng thái trong quá trình làm việc của nhân viên, và mỗi trạng thái này phản ánh sự thay đổi trong tình trạng công việc của họ.**
+### Các trạng thái:
 + Hired: Nhân viên mới được tuyển dụng, nhưng chưa bắt đầu làm việc.
 + Active: Nhân viên đang làm việc và có thể thực hiện các công việc bình thường.
 + On Leave: Nhân viên đang trong kỳ nghỉ phép hoặc nghỉ ốm.
@@ -46,4 +46,16 @@ Lớp Employee có thể có nhiều trạng thái trong quá trình làm việc
 + Active → Resigned: Khi nhân viên xin nghỉ việc.
 
 ![Diagram](https://www.planttext.com/api/plantuml/png/UhzxlqDnIM9HIMbk3bUqLgo2hgwTWaTcKMeA5nUO0Wiu9fTabgKgM2c0bORd5sLhQ7911K7o_da-gObW1KMfXQMfnILWBb0DJ0B5aABKajAYFBUY_5oOCYIZWbABCzFpWFQ2r86OG6c7rBmKaFi00000__y30000)
+
+## 2. Lớp Payroll - Biểu đồ Trạng thái
+**Lớp Payroll chịu trách nhiệm về việc tính toán và xử lý bảng lương. Quá trình này có các trạng thái thay đổi trong từng kỳ tính lương.**
+### Các trạng thái:
++ Initialized: Bảng lương đã được khởi tạo, nhưng chưa bắt đầu tính toán.
++ Calculating: Quá trình tính toán lương đang được thực hiện.
++ Completed: Bảng lương đã hoàn tất, các tính toán đã được hoàn thành và bảng lương có thể được phát hành.
+### Chuyển đổi trạng thái:
++ Initialized → Calculating: Khi quá trình tính toán bảng lương bắt đầu.
++ Calculating → Completed: Khi quá trình tính toán lương hoàn tất.
+  
+![Diagram](https://www.planttext.com/api/plantuml/png/UhzxlqDnIM9HIMbk3bUqLgo2hgwTWcTUPabcOavcLMeA5nSI1opfd9YJN9gJM9APbwvWfG3M6v1OMPIVawEXoOKi2LQSdrkGare2r6gba9QPbrcS0LUHdmTKxv2QbmAo6G000F__0m00)
 
